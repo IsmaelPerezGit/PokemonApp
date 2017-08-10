@@ -10,20 +10,20 @@ var knex = require('knex')({
 
 /* GET pokemon page. */
 router.get('/', function(req, res, next) {
-  res.render('pokemon', {
-    title: 'Pokemon'
+  res.render('trainers', {
+    title: 'Trainers'
   });
   console.log(data.rows[0].name);
 })
 
 /* select pokemon based on id number */
 router.get('/:id', function(req, res, next) {
-  knex.raw(`select * from pokemon where id = ${req.params.id}`)
+  knex.raw(`select * from trainers where id = ${req.params.id}`)
     .then(function(data) {
-      res.render('pokemon', {
-        title: 'Pokemon',
+      res.render('trainers', {
+        title: 'Trainers',
         phrase: 'You Chose ',
-        pokename: data.rows
+        trainerName: data.rows
       });
       console.log(data.rows[0].name);
     })
