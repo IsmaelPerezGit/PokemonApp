@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Trainers</title>
-  </head>
-  <body>
-    <h1>{{title}}</h1>
-    <p>  <p>{{phrase}} <strong>{{#each trainerName}} {{this.name}} {{this.type}} {{/each}}</strong> </p>
-</p>
-  </body>
-</html>
+{{#each trainerRows}}
+<h2><a href="/trainers/{{this.id}}">{{this.name}}<br></a>
+</h2>
+{{/each}}
+<form class="" action="trainers/new" method="get">
+  <input type="submit" name="" value="Create New Trainer">
+</form>

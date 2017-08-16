@@ -14,4 +14,8 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/', function(req,res,next) {
+  res.render('trainers')
+})
+
 module.exports = router;
